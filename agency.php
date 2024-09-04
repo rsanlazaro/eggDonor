@@ -4,11 +4,11 @@ include "includes/app.php";
 
 if (!$_SESSION['login']) {
     header('location: /index.php');
+    echo "login ok";
 } else {
-    if (!($_SESSION['type'] === 'admin' || $_SESSION['type'] === 'admin-jr')) {
-        if (!($_SESSION['type'] === 'agency')) {
-            header('location: /index.php');
-        }
+    if (!($_SESSION['type'] == 'admin' || $_SESSION['type'] == 'admin-jr' || $_SESSION['type'] == 'agency')) {
+        echo "credentials ok";
+        // header('location: /index.php');
     }
 }
 
