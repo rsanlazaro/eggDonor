@@ -13,8 +13,11 @@ if (!$_SESSION['login']) {
         // header('location: /index.php');
     }
 }
-
+echo "hasdfaslkfa";
 $conn = connectDB();
+
+echo "sadfasdaaaa";
+
 if (isset($_GET['code'])) {
     $donant_code_search = $_GET['code'];
 }
