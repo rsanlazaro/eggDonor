@@ -2,28 +2,21 @@
 include 'includes/templates/header.php';
 include "includes/app.php";
 
-echo "hola";
-
 if (!$_SESSION['login']) {
     header('location: /index.php');
-    echo "login ok";
 } else {
     if (!($_SESSION['type'] == 'admin' || $_SESSION['type'] == 'admin-jr' || $_SESSION['type'] == 'agency')) {
-        echo "credentials ok";
-        // header('location: /index.php');
+        header('location: /index.php');
     }
 }
-echo "hasdfaslkfa";
 $conn = connectDB();
-
-echo "sadfasdaaaa";
 
 if (isset($_GET['code'])) {
     $donant_code_search = $_GET['code'];
 }
 $idAgency = $_SESSION['username'];
 
-$sql = "SELECT * FROM donants WHERE agency='${idAgency}'";
+$sql = "SELECT * FROM donants";
 $result = mysqli_query($conn, $sql);
 $index = 0;
 while ($row = mysqli_fetch_assoc($result)) {
