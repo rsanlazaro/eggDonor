@@ -10,8 +10,6 @@ function connectDB() : mysqli{
     if(!$db) {
         echo "Error, no se pudo conectar";
         exit;
-    } else {
-        echo "se conectó";
     }
 
     return $db;

@@ -2,6 +2,8 @@
 include 'includes/templates/header.php';
 include "includes/app.php";
 
+echo "hola";
+
 if (!$_SESSION['login']) {
     header('location: /index.php');
     echo "login ok";
