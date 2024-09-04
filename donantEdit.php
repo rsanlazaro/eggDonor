@@ -286,7 +286,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                         <?php if (!($profile === 'Fenotipe')) { ?>
                             <div class="col-md-12">
                                 <div class="has-validation">
-                                    <label class="label-form" for="validationCustomUsername">Imagen 1:</label>
+                                    <label class="label-form" for="validationCustomUsername">Imagen 1 (relación de imagen recomendada: 1200x1600):</label>
                                     <input type="file" onchange="previewFile()" class="form-control img-1-input" id="validationCustomUsername" aria-describedby="inputGroupPrepend" name="image-1" />
                                     <img class="img-1-pre" src=<?php echo $ext_img_1 ?> height="200" alt="Image preview...">
                                     <div class="invalid-feedback">
@@ -296,7 +296,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                             </div>
                             <div class="col-md-12">
                                 <div class="has-validation">
-                                    <label class="label-form" for="validationCustomUsername">Imagen 2:</label>
+                                    <label class="label-form" for="validationCustomUsername">Imagen 2 (relación de imagen recomendada: 1200x1600):</label>
                                     <input type="file" onchange="previewFile2()" class="form-control img-2-input" id="validationCustomUsername" aria-describedby="inputGroupPrepend" name="image-2" />
                                     <img class="img-2-pre" src=<?php echo $ext_img_2 ?> height="200" alt="Image preview...">
                                     <div class="invalid-feedback">
@@ -306,7 +306,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                             </div>
                             <div class="col-md-12">
                                 <div class="has-validation">
-                                    <label class="label-form" for="validationCustomUsername">Imagen 3:</label>
+                                    <label class="label-form" for="validationCustomUsername">Imagen 3 (relación de imagen recomendada: 1200x1600):</label>
                                     <input type="file" onchange="previewFile3()" class="form-control img-3-input" id="validationCustomUsername" aria-describedby="inputGroupPrepend" name="image-3" />
                                     <img class="img-3-pre" src=<?php echo $ext_img_3 ?> height="200" alt="Image preview...">
                                     <div class="invalid-feedback">
@@ -316,7 +316,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                             </div>
                             <div class="col-md-12">
                                 <div class="has-validation">
-                                    <label class="label-form" for="validationCustomUsername">Imagen 4:</label>
+                                    <label class="label-form" for="validationCustomUsername">Imagen 4 (relación de imagen recomendada: 1200x1600):</label>
                                     <input type="file" onchange="previewFile4()" class="form-control img-4-input" id="validationCustomUsername" aria-describedby="inputGroupPrepend" name="image-4" />
                                     <img class="img-4-pre" src=<?php echo $ext_img_4 ?> height="200" alt="Image preview...">
                                     <div class="invalid-feedback">
@@ -327,7 +327,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                         <?php } else { ?>
                             <div class="col-md-12">
                                 <div class="has-validation">
-                                    <label class="label-form" for="validationCustomUsername">Imagen (Ojos):</label>
+                                    <label class="label-form" for="validationCustomUsername">Imagen (Ojos - relación de imagen recomendada: 2400x1200):</label>
                                     <input type="file" onchange="previewFile()" class="form-control img-1-input" id="validationCustomUsername" aria-describedby="inputGroupPrepend" name="image-1" />
                                     <img class="img-1-pre" src=<?php echo $ext_img_1 ?> height="200" alt="Image preview...">
                                     <div class="invalid-feedback">
@@ -337,7 +337,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                             </div>
                             <div class="col-md-12">
                                 <div class="has-validation">
-                                    <label class="label-form" for="validationCustomUsername">Imagen (Nariz):</label>
+                                    <label class="label-form" for="validationCustomUsername">Imagen (Nariz - relación de imagen recomendada: 2400x1200):</label>
                                     <input type="file" onchange="previewFile2()" class="form-control img-2-input" id="validationCustomUsername" aria-describedby="inputGroupPrepend" name="image-2" />
                                     <img class="img-2-pre" src=<?php echo $ext_img_2 ?> height="200" alt="Image preview...">
                                     <div class="invalid-feedback">
@@ -347,7 +347,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                             </div>
                             <div class="col-md-12">
                                 <div class="has-validation">
-                                    <label class="label-form" for="validationCustomUsername">Imagen (Boca):</label>
+                                    <label class="label-form" for="validationCustomUsername">Imagen (Boca - relación de imagen recomendada: 2400x1200):</label>
                                     <input type="file" onchange="previewFile3()" class="form-control img-3-input" id="validationCustomUsername" aria-describedby="inputGroupPrepend" name="image-3" />
                                     <img class="img-3-pre" src=<?php echo $ext_img_3 ?> height="200" alt="Image preview...">
                                     <div class="invalid-feedback">
@@ -367,7 +367,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     </div>
     <div class="menu-users">
         <div class="create-user">
-            <a href=<?php echo "donants.php?code=".$code?>>
+            <a href=<?php if ($_SESSION['type'] == 'agency') {echo "agency.php?code=".$code;} else {echo "donants.php?code=".$code; }?>>
                 Regresar
             </a>
         </div>
