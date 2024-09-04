@@ -7,7 +7,7 @@ include "includes/app.php";
 if (!$_SESSION['login']) {
     header('location: /index.php');
 } else {
-    if (!($_SESSION['type'] === 'admin' || $_SESSION['type'] === 'admin-jr')) {
+    if (!($_SESSION['type'] === 'admin' || $_SESSION['type'] === 'admin-jr' || $_SESSION['type'] === 'agency')) {
         header('location: /index.php');
     }
 }
@@ -172,11 +172,16 @@ if (isset($_REQUEST['nationality'])) {
             $price = mysqli_real_escape_string($conn, $price);
             date_default_timezone_set('America/Mexico_City');
             $create_datetime = date("y-m-d G:i:s");
-            $query    = "INSERT into `donants` (nationality, date_birth, color_eyes, color_skin, blood_type, height, weight, education, color_hair, type_hair, type_body, ocupation, profile, supplier, price, code, code_img, hobbie, color_favorite, animal_favorite, book_movie_favorite, goal, ovarian_reserve)
-                    VALUES ('$nationality', '" . $date_birth . "', '$color_eyes', '$color_skin', '$blood_type', '$height', '$weight', '$education', '$color_hair', '$type_hair', '$type_body', '$ocupation', '$profile', '$supplier', '$price', '$code', '$code_img', '$hobbie', '$color_favorite', '$animal_favorite', '$book_movie_favorite', '$goal', '$ovarian_reserve')";
+            if ($_SESSION['type'] == "agency") { $agency = $_SESSION['username']; } else { $agency = "No informado"; }
+            $query    = "INSERT into `donants` (nationality, date_birth, color_eyes, color_skin, blood_type, height, weight, education, color_hair, type_hair, type_body, ocupation, profile, supplier, price, code, code_img, hobbie, color_favorite, animal_favorite, book_movie_favorite, goal, ovarian_reserve, agency)
+                    VALUES ('$nationality', '" . $date_birth . "', '$color_eyes', '$color_skin', '$blood_type', '$height', '$weight', '$education', '$color_hair', '$type_hair', '$type_body', '$ocupation', '$profile', '$supplier', '$price', '$code', '$code_img', '$hobbie', '$color_favorite', '$animal_favorite', '$book_movie_favorite', '$goal', '$ovarian_reserve', '$agency')";
             $result   = mysqli_query($conn, $query);
             if ($result) {
-                header("Location: donants.php?msg=El usuario se ha creado exitosamente");
+                if ($_SESSION['type'] == "agency") {
+                    header("Location: agency.php?msg=El usuario se ha creado exitosamente");
+                } else {
+                    header("Location: donants.php?msg=El usuario se ha creado exitosamente");
+                }
             } else {
                 header("Location: donants.php?msg=Hubo un problema registrando al usuario. Por favor, intente nuevamente");
             }

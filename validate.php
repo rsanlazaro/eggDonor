@@ -71,7 +71,11 @@ if (empty($username)) {
             if ($row['type'] == "admin" || $row['type'] == "admin-jr") {
                 header("Location: admin.php");
             } else {
-                header("Location: catalogue.php");
+                if ($row['type'] == "agency") {
+                    header("Location: agency.php");
+                }else {
+                    header("Location: catalogue.php");
+                }
             }
             exit();
         } else {

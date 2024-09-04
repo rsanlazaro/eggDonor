@@ -5,7 +5,7 @@ include "includes/app.php";
 if (!$_SESSION['login']) {
     header('location: /index.php');
 } else {
-    if (!($_SESSION['type'] === 'admin' || $_SESSION['type'] === 'admin-jr')) {
+    if (!($_SESSION['type'] === 'admin' || $_SESSION['type'] === 'admin-jr' || $_SESSION['type'] === 'agency')) {
         header('location: /index.php');
     }
 }
@@ -671,7 +671,7 @@ if ($result->num_rows > 0) {
     </div>
     <div class="menu-users">
         <div class="create-user">
-            <a href=<?php echo "donants.php?code=".$code?>>
+            <a href=<?php if ($_SESSION['type'] ==  "agency") {echo "agency.php?code=".$code;} else {echo "donants.php?code=".$code; }?>>
                 Regresar
             </a>
         </div>

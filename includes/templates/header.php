@@ -133,13 +133,19 @@
                   </li>
                 </ul>
               </li>
-            <?php } else { ?>
+            <?php } else if ($_SESSION['type'] === 'agency') { ?>
+              <li class="nav-item">
+                <a class="nav-link" href="agency.php">
+                  <p>Donantes</p>
+                </a>
+              </li>
+            <?php } else {?>
               <li class="nav-item">
                 <a class="nav-link" href="phenotypeFIle.php">
                   <p>Formulario</p>
                 </a>
               </li>
-            <?php } ?>
+          <?php } ?>
           <?php } ?>
         </div>
       </div>

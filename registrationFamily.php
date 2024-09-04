@@ -7,7 +7,7 @@ include "includes/app.php";
 if (!$_SESSION['login']) {
     header('location: /index.php');
 } else {
-    if (!($_SESSION['type'] === 'admin' || $_SESSION['type'] === 'admin-jr')) {
+    if (!($_SESSION['type'] === 'admin' || $_SESSION['type'] === 'admin-jr' || $_SESSION['type'] === 'agency')) {
         header('location: /index.php');
     }
 }
@@ -38,7 +38,11 @@ if (isset($_REQUEST['member'])) {
         if (isset($_SESSION['donant_id'])) {
             header("Location: donantFamily.php?id=" . $_SESSION['donant_id'] . "&msg=Los datos se han actualizado correctamente");
         } else {
-            header("Location: donants.php?msg=Los datos se han actualizado correctamente");
+            if ($_SESSION['type'] == "agency") {
+                header("Location: agency.php?msg=Los datos se han actualizado correctamente");
+            } else {
+                header("Location: donants.php?msg=Los datos se han actualizado correctamente");
+            }
         }
     } else {
         header("Location: donantFamily.php?id=" . $_SESSION['donant_id'] . "&msg=Hubo un error realizando el registro. Por favor, intente nuevamente");
