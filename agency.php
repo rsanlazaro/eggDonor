@@ -16,7 +16,7 @@ if (isset($_GET['code'])) {
 }
 $idAgency = $_SESSION['username'];
 
-$sql = "SELECT * FROM donants";
+$sql = "SELECT * FROM donants WHERE agency='${idAgency}'";
 $result = mysqli_query($conn, $sql);
 $index = 0;
 while ($row = mysqli_fetch_assoc($result)) {
