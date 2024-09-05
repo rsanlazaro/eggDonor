@@ -6,6 +6,7 @@ $conn = connectDB();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo "FIRST OK";
+    var_dump($_FILES);
     if (isset($_FILES['image-1']['name'])) {
         $file = $_FILES['image-1']['name'];
         $path = pathinfo($file);
