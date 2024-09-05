@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 [
                     'public_id' => $_FILES['image-1']['name'],
                     'overwrite' => true,
-                    'folder' => 'test',
+                    'folder' => 'eggdonor',
                     'format' => 'png',
                     'invalidate' => true
                 ]
