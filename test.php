@@ -53,6 +53,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 </div>
                             </div>
                         </div>
+                        <div class="form-btn">
+                            <button class="btn btn-send" type="submit">
+                                <div>Actualizar datos</div>
+                            </button>
+                        </div>
                     </form>
             </div>
         </div>
