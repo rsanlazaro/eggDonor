@@ -1,5 +1,5 @@
 <?php
-include 'includes/templates/header.php';
+session_start();
 include "includes/app.php";
 
 $conn = connectDB();
@@ -47,16 +47,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <div class="has-validation">
                                 <label class="label-form" for="validationCustomUsername">Imagen 1 (relación de imagen recomendada: 1200x1600):</label>
                                 <input type="file" onchange="previewFile()" class="form-control img-1-input" id="validationCustomUsername" aria-describedby="inputGroupPrepend" name="image-1" />
-                                <img class="img-1-pre" height="200" alt="Image preview...">
+                                <img class="img-1-pre" src=<?php echo $ext_img_1 ?> height="200" alt="Image preview...">
                                 <div class="invalid-feedback">
                                     <div>Seleccione una imagen</div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="form-btn">
-                            <button class="btn btn-send" type="submit">
-                                <div>Actualizar datos</div>
-                            </button>
                         </div>
                     </form>
             </div>
