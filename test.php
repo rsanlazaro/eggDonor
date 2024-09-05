@@ -8,6 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo "FIRST OK";
     var_dump($_FILES);
     var_dump($_FILES['image-1']['name']);
+    echo(isset($_FILES['image-1']['name']));
     if (isset($_FILES['image-1']['name'])) {
         $file = $_FILES['image-1']['name'];
         $path = pathinfo($file);
