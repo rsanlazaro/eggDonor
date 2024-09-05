@@ -1,58 +1,20 @@
 <?php
-session_start();
+include 'includes/templates/header.php';
+?>
+<?php
 include "includes/app.php";
 
 $conn = connectDB();
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    echo "FIRST OK";
-    var_dump($_FILES);
-    var_dump($_FILES['image-1']['name']);
-    echo(isset($_FILES['image-1']['name']));
-    if (isset($_FILES['image-1']['name'])) {
-        echo "a";
-        $file = $_FILES['image-1']['name'];
-        echo "b";
-        $path = pathinfo($file);
-        echo "c";
-        echo "d";
-        var_dump($_FILES['image-1']['size']);
-        if (($_FILES['image-1']['size']) > 0) {
-            echo "e";
-            $result = $cloudinary->uploadApi()->upload(
-                $_FILES['image-1']['tmp_name'],
-                [
-                    'public_id' => $_FILES['image-1']['name'],
-                    'overwrite' => true,
-                    'folder' => 'eggdonor',
-                    'format' => 'png',
-                    'invalidate' => true
-                ]
-            );
-            var_dump($result);
-            $json  = json_encode($result);
-            var_dump($json);
-            $array = json_decode($json, true);
-            $secureUrl = $array['secure_url'];
-            // $query = "UPDATE donants SET ext_img_1='${secureUrl}' WHERE id = ${id}";
-            // $result   = mysqli_query($conn, $query);
-            echo "THIRD OK";
-        }
-        echo "SECOND OK";
-        // header('Location: test.php?msg=La imagen se subio correctamente');
-    }
-}
 ?>
 <main class="register">
     <div class="register-info">
-        <h3>Editar información de donante</h3>
+        <h3>Test para imágenes</h3>
     </div>
     <div class="register-form new-user">
         <div class="form-body">
             <div class="contact-form">
-                <h2 class="contact-form-title">TEST</h1>
-                    <form class="form" action="" method="post" enctype="multipart/form-data">
-                        <input type="hidden" name="id" value="1">
+                <h2 class="contact-form-title">Carga de imagen</h1>
+                    <form class="form" action="updateTest.php" method="post" enctype="multipart/form-data">
                         <div class="col-md-12">
                             <div class="has-validation">
                                 <label class="label-form" for="validationCustomUsername">Imagen 1 (relación de imagen recomendada: 1200x1600):</label>
