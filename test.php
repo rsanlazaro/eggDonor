@@ -15,8 +15,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "b";
         $path = pathinfo($file);
         echo "c";
-        $_FILES['image-1']['name'] = "1_1";
+        echo "d";
+        var_dump($_FILES['image-1']['size']);
         if (($_FILES['image-1']['size']) > 0) {
+            echo "e";
             $result = $cloudinary->uploadApi()->upload(
                 $_FILES['image-1']['tmp_name'],
                 [
