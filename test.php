@@ -26,6 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // $query = "UPDATE donants SET ext_img_1='${secureUrl}' WHERE id = ${id}";
             // $result   = mysqli_query($conn, $query);
         }
+        header('Location: test.php?msg=La imagen se subio correctamente');
     }
 }
 ?>
