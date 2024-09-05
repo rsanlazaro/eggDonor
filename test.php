@@ -29,7 +29,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     'invalidate' => true
                 ]
             );
+            var_dump($result);
             $json  = json_encode($result);
+            var_dump($json);
             $array = json_decode($json, true);
             $secureUrl = $array['secure_url'];
             // $query = "UPDATE donants SET ext_img_1='${secureUrl}' WHERE id = ${id}";
