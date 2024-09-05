@@ -5,6 +5,7 @@ include "includes/app.php";
 $conn = connectDB();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    echo "FIRST OK";
     if (isset($_FILES['image-1']['name'])) {
         $file = $_FILES['image-1']['name'];
         $path = pathinfo($file);
@@ -25,8 +26,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $secureUrl = $array['secure_url'];
             // $query = "UPDATE donants SET ext_img_1='${secureUrl}' WHERE id = ${id}";
             // $result   = mysqli_query($conn, $query);
+            echo "THIRD OK";
         }
-        header('Location: test.php?msg=La imagen se subio correctamente');
+        echo "SECOND OK";
+        // header('Location: test.php?msg=La imagen se subio correctamente');
     }
 }
 ?>
