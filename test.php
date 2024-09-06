@@ -19,7 +19,7 @@ $conn = connectDB();
                             <div class="has-validation">
                                 <label class="label-form" for="validationCustomUsername">Imagen 1 (relación de imagen recomendada: 1200x1600):</label>
                                 <input type="file" onchange="previewFile()" class="form-control img-1-input" id="validationCustomUsername" aria-describedby="inputGroupPrepend" name="image-1" />
-                                <img class="img-1-pre" src=<?php echo $ext_img_1 ?> height="200" alt="Image preview...">
+                                <img class="img-1-pre" height="200" alt="Image preview...">
                                 <div class="invalid-feedback">
                                     <div>Seleccione una imagen</div>
                                 </div>
