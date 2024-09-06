@@ -25,6 +25,9 @@ $conn = connectDB();
                                 </div>
                             </div>
                         </div>
+                        <div class="col-md-12">
+                            <button id="btn1">Delete image</button>
+                        </div>
                         <div class="form-btn">
                             <button class="btn btn-send" type="submit">
                                 <div>Actualizar datos</div>
@@ -106,6 +109,16 @@ $conn = connectDB();
             preview.src = "";
         }
     }
+
+    document.getElementById("btn1").addEventListener("click", function() {
+        fetch('testDelete.php')
+            .then(response => response.text()) // Get the text response
+            .then(data => {
+                console.log(data); // Log the response from PHP
+                alert(data); // Show the response in an alert
+            })
+            .catch(error => console.error('Error:', error)); // Handle errors
+    });
 </script>
 </body>
 
