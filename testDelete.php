@@ -12,9 +12,9 @@ var_dump($_POST);
 //         $path = pathinfo($file);
 //         $_FILES['image-1']['name'] = $id . "_1";
 // if (($_FILES['image-1']['size']) > 0) {
-// $result = $cloudinary->uploadApi()
-// ->destroy('test/_1');
-// var_dump($result);
+$result = $cloudinary->uploadApi()
+->destroy('test/_1');
+var_dump($result);
 //     $json  = json_encode($result);
 //     $array = json_decode($json, true);
 //     $secureUrl = $array['secure_url'];
