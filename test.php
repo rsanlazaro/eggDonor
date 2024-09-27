@@ -25,7 +25,7 @@ $conn = connectDB();
                                     <div>Seleccione una imagen</div>
                                 </div>
                                 <div class="delete-btn">
-                                    <button id="btn1">Borrar imagen</button>
+                                    <button type="button" id="btn1">Borrar imagen</button>
                                 </div>
                             </div>
                         </div>
