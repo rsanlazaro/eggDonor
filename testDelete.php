@@ -6,15 +6,22 @@ include "includes/app.php";
 $conn = connectDB();
 var_dump($_POST);
 
+// Get the raw POST body
+$rawData = file_get_contents('php://input');
+
+// Decode the JSON into a PHP associative array
+$data = json_decode($rawData, true);
+var_dump($data);
+
 // if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 //     if (isset($_FILES['image-1']['name'])) {
 //         $file = $_FILES['image-1']['name'];
 //         $path = pathinfo($file);
 //         $_FILES['image-1']['name'] = $id . "_1";
 // if (($_FILES['image-1']['size']) > 0) {
-$result = $cloudinary->uploadApi()
-->destroy('test/_1');
-var_dump($result);
+// $result = $cloudinary->uploadApi()
+// ->destroy('test/_1');
+// var_dump($result);
 //     $json  = json_encode($result);
 //     $array = json_decode($json, true);
 //     $secureUrl = $array['secure_url'];
