@@ -112,12 +112,13 @@ $conn = connectDB();
     }
 
     document.getElementById("btn1").addEventListener("click", function() {
+        var jsVar = "<?php echo $ext_img_1; ?>";
         fetch('testDelete.php', {
                 method: 'POST', // Use POST method
                 headers: {
                     'Content-Type': 'application/json', // Sending JSON data
                 },
-                body: JSON.stringify($ext_img_1) // Convert the data to a JSON string
+                body: JSON.stringify(jsVar) // Convert the data to a JSON string
             })
             .then(response => response.text()) // Get the text response
             .then(data => {
