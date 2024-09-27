@@ -27,7 +27,7 @@ var_dump($result);
 //     $json  = json_encode($result);
 //     $array = json_decode($json, true);
 //     $secureUrl = $array['secure_url'];
-header("Location: test.php?msg=La imagen ha sido borrada exitosamente");
+// header("Location: test.php?msg=La imagen ha sido borrada exitosamente");
 // }
 //     }
 // }
