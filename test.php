@@ -3,6 +3,7 @@ include 'includes/templates/header.php';
 ?>
 <?php
 include "includes/app.php";
+$ext_img_1 = "https://res.cloudinary.com/dyn4nexb0/image/upload/v1712164427/test/_1.png";
 
 $conn = connectDB();
 ?>
@@ -23,10 +24,10 @@ $conn = connectDB();
                                 <div class="invalid-feedback">
                                     <div>Seleccione una imagen</div>
                                 </div>
+                                <div class="delete-btn">
+                                    <button id="btn1">Borrar imagen</button>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-12">
-                            <button id="btn1">Delete image</button>
                         </div>
                         <div class="form-btn">
                             <button class="btn btn-send" type="submit">
@@ -111,11 +112,16 @@ $conn = connectDB();
     }
 
     document.getElementById("btn1").addEventListener("click", function() {
-        fetch('testDelete.php')
+        fetch('testDelete.php', {
+                method: 'POST', // Use POST method
+                headers: {
+                    'Content-Type': 'application/json', // Sending JSON data
+                },
+                body: JSON.stringify($ext_img_1) // Convert the data to a JSON string
+            })
             .then(response => response.text()) // Get the text response
             .then(data => {
                 console.log(data); // Log the response from PHP
-                alert(data); // Show the response in an alert
             })
             .catch(error => console.error('Error:', error)); // Handle errors
     });

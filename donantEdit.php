@@ -136,7 +136,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                         <div class="col-md-12">
                             <div class="has-validation">
                                 <label class="label-form" for="validationCustomUsername">Reserva ovárica</label>
-                                <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" name="ovarian_reserve" required value="<?php echo $ovarian_reserve ?>"/>
+                                <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" name="ovarian_reserve" required value="<?php echo $ovarian_reserve ?>" />
                                 <div class="invalid-feedback">
                                     <div>Ingrese la reserva ovárica</div>
                                 </div>
@@ -292,6 +292,11 @@ while ($row = mysqli_fetch_assoc($result)) {
                                     <div class="invalid-feedback">
                                         <div>Seleccione una imagen</div>
                                     </div>
+                                    <?php if (strlen($ext_img_1) > 10) { ?>
+                                        <div class="delete-btn">
+                                            <button id="btn1">Borrar imagen</button>
+                                        </div>
+                                    <?php } ?>
                                 </div>
                             </div>
                             <div class="col-md-12">
@@ -367,7 +372,11 @@ while ($row = mysqli_fetch_assoc($result)) {
     </div>
     <div class="menu-users">
         <div class="create-user">
-            <a href=<?php if ($_SESSION['type'] == 'agency') {echo "agency.php?code=".$code;} else {echo "donants.php?code=".$code; }?>>
+            <a href=<?php if ($_SESSION['type'] == 'agency') {
+                        echo "agency.php?code=" . $code;
+                    } else {
+                        echo "donants.php?code=" . $code;
+                    } ?>>
                 Regresar
             </a>
         </div>
@@ -444,6 +453,16 @@ while ($row = mysqli_fetch_assoc($result)) {
             preview.src = "";
         }
     }
+
+    document.getElementById("btn1").addEventListener("click", function() {
+        fetch('deleteImage.php')
+            .then(response => response.text()) // Get the text response
+            .then(data => {
+                console.log(data); // Log the response from PHP
+                alert(data); // Show the response in an alert
+            })
+            .catch(error => console.error('Error:', error)); // Handle errors
+    });
 </script>
 </body>
 

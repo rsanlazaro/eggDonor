@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_FILES['image-1']['name'])) {
         $file = $_FILES['image-1']['name'];
         $path = pathinfo($file);
-        $_FILES['image-1']['name'] = $id . "_1";
+        $_FILES['image-1']['name'] = "_1";
         if (($_FILES['image-1']['size']) > 0) {
             $result = $cloudinary->uploadApi()->upload(
                 $_FILES['image-1']['tmp_name'],
