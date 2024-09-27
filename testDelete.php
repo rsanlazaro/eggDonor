@@ -4,7 +4,7 @@ session_start();
 
 include "includes/app.php";
 $conn = connectDB();
-var_dump($_POST);
+// var_dump($_POST);
 
 // if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 //     if (isset($_FILES['image-1']['name'])) {
