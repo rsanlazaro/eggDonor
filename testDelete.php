@@ -27,6 +27,7 @@ var_dump($result);
 //     $json  = json_encode($result);
 //     $array = json_decode($json, true);
 //     $secureUrl = $array['secure_url'];
+var_dump($result->offsetGet(1));
 var_dump($result->offsetGet(4));
 var_dump($result->offsetGet(5));
 // header("Location: test.php?msg=La imagen ha sido borrada exitosamente");
