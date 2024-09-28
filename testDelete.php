@@ -21,8 +21,7 @@ $deleteTgt = $twoElements[0] . "/" . $twoElementsExt[0];
 //         $path = pathinfo($file);
 //         $_FILES['image-1']['name'] = $id . "_1";
 // if (($_FILES['image-1']['size']) > 0) {
-$result = $cloudinary->uploadApi()
-->destroy($deleteTgt);
+$result = $cloudinary->uploadApi()->destroy($deleteTgt);
 // var_dump($result);
 //     $json  = json_encode($result);
 //     $array = json_decode($json, true);
