@@ -22,13 +22,11 @@ $deleteTgt = $twoElements[0] . "/" . $twoElementsExt[0];
 //         $_FILES['image-1']['name'] = $id . "_1";
 // if (($_FILES['image-1']['size']) > 0) {
 $result = $cloudinary->uploadApi()->destroy($deleteTgt);
+var_dump($result);
 // var_dump($result);
 //     $json  = json_encode($result);
 //     $array = json_decode($json, true);
 //     $secureUrl = $array['secure_url'];
-var_dump($result->offsetGet(1));
-var_dump($result->offsetGet(4));
-var_dump($result->offsetGet(5));
 // header("Location: test.php?msg=La imagen ha sido borrada exitosamente");
 // }
 //     }
