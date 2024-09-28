@@ -23,7 +23,7 @@ $deleteTgt = $twoElements[0] . "/" . $twoElementsExt[0];
 // if (($_FILES['image-1']['size']) > 0) {
 $result = $cloudinary->uploadApi()
 ->destroy($deleteTgt);
-var_dump($result);
+// var_dump($result);
 //     $json  = json_encode($result);
 //     $array = json_decode($json, true);
 //     $secureUrl = $array['secure_url'];
