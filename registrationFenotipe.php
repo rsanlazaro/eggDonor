@@ -227,7 +227,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <div>Ingrese el código de identificación</div>
                             </div>
                         </div>
-                        <input type="hidden" class="form-control" id="validationCustom01" name="id" value="<?php echo $idNew; ?>" />
+                        <input type="hidden" class="form-control" id="validationCustom01" name="id" value="<?php echo $_GET['id']; ?>" />
                         <div class="col-md-12">
                             <div class="has-validation">
                                 <label class="label-form" for="validationCustomUsername">Imagen (Ojos - relación de imagen recomendada: 2400x1200):</label>
