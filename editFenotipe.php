@@ -32,7 +32,8 @@ while ($row = mysqli_fetch_assoc($result)) {
 
 // When form submitted, insert values into the database.
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $id = $_POST['id'];
+    $id = $_GET['id'];
+    echo $id;
     if (isset($_FILES['image-1']['name'])) {
         $file = $_FILES['image-1']['name'];
         $path = pathinfo($file);
