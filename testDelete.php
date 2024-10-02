@@ -26,7 +26,7 @@ $result = $cloudinary->uploadApi()->destroy($deleteTgt,$options = [
 ]);
 var_dump($result);
 $response = $apiResponse->offsetGet('result');
-echo $response;
+var_dump($response);
 // var_dump($result);
 //     $json  = json_encode($result);
 //     $array = json_decode($json, true);
