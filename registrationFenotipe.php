@@ -111,6 +111,7 @@ $result = mysqli_query($conn, $query);
 // When form submitted, insert values into the database.
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id = $_POST['id'];
+    $id--;
     if (isset($_FILES['image-1']['name'])) {
         $file = $_FILES['image-1']['name'];
         $path = pathinfo($file);
@@ -230,7 +231,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <div class="has-validation">
                                 <label class="label-form" for="validationCustomUsername">Imagen (Ojos - relación de imagen recomendada: 2400x1200):</label>
                                 <input type="file" onchange="previewFile()" class="form-control img-1-input" id="validationCustomUsername" aria-describedby="inputGroupPrepend" name="image-1" />
-                                <img class="img-1-pre" src=<?php echo $ext_img_1 ?> height="200" alt="Image preview...">
+                                <img class="img-1-pre" src=<?php echo $ext_img_1; ?> height="200" alt="Image preview...">
                                 <div class="invalid-feedback">
                                     <div>Seleccione una imagen</div>
                                 </div>
@@ -245,7 +246,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <div class="has-validation">
                                 <label class="label-form" for="validationCustomUsername">Imagen (Nariz - relación de imagen recomendada: 2400x1200):</label>
                                 <input type="file" onchange="previewFile2()" class="form-control img-2-input" id="validationCustomUsername" aria-describedby="inputGroupPrepend" name="image-2" />
-                                <img class="img-2-pre" src=<?php echo $ext_img_2 ?> height="200" alt="Image preview...">
+                                <img class="img-2-pre" src=<?php echo $ext_img_2; ?> height="200" alt="Image preview...">
                                 <div class="invalid-feedback">
                                     <div>Seleccione una imagen</div>
                                 </div>
@@ -260,7 +261,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <div class="has-validation">
                                 <label class="label-form" for="validationCustomUsername">Imagen (Boca - relación de imagen recomendada: 2400x1200):</label>
                                 <input type="file" onchange="previewFile3()" class="form-control img-3-input" id="validationCustomUsername" aria-describedby="inputGroupPrepend" name="image-3" />
-                                <img class="img-3-pre" src=<?php echo $ext_img_3 ?> height="200" alt="Image preview...">
+                                <img class="img-3-pre" src=<?php echo $ext_img_3; ?> height="200" alt="Image preview...">
                                 <div class="invalid-feedback">
                                     <div>Seleccione una imagen</div>
                                 </div>
