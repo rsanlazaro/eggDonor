@@ -487,7 +487,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     document.getElementById("btn1").addEventListener("click", function() {
         var jsVar = "<?php echo $ext_img_1; ?>";
         let lastPart = jsVar.substring(jsVar.lastIndexOf('/') + 1);
-        alert("¿Deseas borrar la imagen " + lastPart + "?");
+        confirm("¿Deseas borrar la imagen " + lastPart + "?");
         fetch('deleteImage.php', {
                 method: 'POST', // Use POST method
                 headers: {
@@ -500,7 +500,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     document.getElementById("btn2").addEventListener("click", function() {
         var jsVar = "<?php echo $ext_img_2; ?>";
         let lastPart = jsVar.substring(jsVar.lastIndexOf('/') + 1);
-        alert("¿Deseas borrar la imagen " + lastPart + "?");
+        confirm("¿Deseas borrar la imagen " + lastPart + "?");
         fetch('deleteImage.php', {
                 method: 'POST', // Use POST method
                 headers: {
@@ -513,7 +513,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     document.getElementById("btn3").addEventListener("click", function() {
         var jsVar = "<?php echo $ext_img_3; ?>";
         let lastPart = jsVar.substring(jsVar.lastIndexOf('/') + 1);
-        alert("¿Deseas borrar la imagen " + lastPart + "?");
+        confirm("¿Deseas borrar la imagen " + lastPart + "?");
         fetch('deleteImage.php', {
                 method: 'POST', // Use POST method
                 headers: {
@@ -526,7 +526,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     document.getElementById("btn4").addEventListener("click", function() {
         var jsVar = "<?php echo $ext_img_4; ?>";
         let lastPart = jsVar.substring(jsVar.lastIndexOf('/') + 1);
-        alert("¿Deseas borrar la imagen " + lastPart + "?");
+        confirm("¿Deseas borrar la imagen " + lastPart + "?");
         fetch('deleteImage.php', {
                 method: 'POST', // Use POST method
                 headers: {
