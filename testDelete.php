@@ -25,10 +25,12 @@ $apiResponse = $cloudinary->uploadApi()->destroy($deleteTgt,$options = [
     "media_metadata" => true
 ]);
 // var_dump($apiResponse);
-$response1 = $apiResponse->offsetGet('result');
-$response2 = $apiResponse['result']; // "ok"
-var_dump($response1);
-var_dump($response2);
+$response = $apiResponse->offsetGet('result');
+if ($response == "ok") {
+    header("Location: test.php?msg=La imagen ha sido borrada exitosamente.");
+} else {
+    header("Location: test.php?msg=Ocurrió un problema con la eliminación de la imagen. Por favor, intente de nuevo.");
+}
 // var_dump($result);
 //     $json  = json_encode($result);
 //     $array = json_decode($json, true);
