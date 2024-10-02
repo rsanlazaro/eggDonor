@@ -294,7 +294,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                                     </div>
                                     <?php if (strlen($ext_img_1) > 10) { ?>
                                         <div class="delete-btn">
-                                            <button id="btn1">Borrar imagen</button>
+                                            <button type="button" id="btn1">Borrar imagen</button>
                                         </div>
                                     <?php } ?>
                                 </div>
@@ -307,6 +307,11 @@ while ($row = mysqli_fetch_assoc($result)) {
                                     <div class="invalid-feedback">
                                         <div>Seleccione una imagen</div>
                                     </div>
+                                    <?php if (strlen($ext_img_2) > 10) { ?>
+                                        <div class="delete-btn">
+                                            <button type="button" id="btn2">Borrar imagen</button>
+                                        </div>
+                                    <?php } ?>
                                 </div>
                             </div>
                             <div class="col-md-12">
@@ -317,6 +322,11 @@ while ($row = mysqli_fetch_assoc($result)) {
                                     <div class="invalid-feedback">
                                         <div>Seleccione una imagen</div>
                                     </div>
+                                    <?php if (strlen($ext_img_3) > 10) { ?>
+                                        <div class="delete-btn">
+                                            <button type="button" id="btn3">Borrar imagen</button>
+                                        </div>
+                                    <?php } ?>
                                 </div>
                             </div>
                             <div class="col-md-12">
@@ -327,6 +337,11 @@ while ($row = mysqli_fetch_assoc($result)) {
                                     <div class="invalid-feedback">
                                         <div>Seleccione una imagen</div>
                                     </div>
+                                    <?php if (strlen($ext_img_4) > 10) { ?>
+                                        <div class="delete-btn">
+                                            <button type="button" id="btn4">Borrar imagen</button>
+                                        </div>
+                                    <?php } ?>
                                 </div>
                             </div>
                         <?php } else { ?>
@@ -338,6 +353,11 @@ while ($row = mysqli_fetch_assoc($result)) {
                                     <div class="invalid-feedback">
                                         <div>Seleccione una imagen</div>
                                     </div>
+                                    <?php if (strlen($ext_img_1) > 10) { ?>
+                                        <div class="delete-btn">
+                                            <button type="button" id="btn1">Borrar imagen</button>
+                                        </div>
+                                    <?php } ?>
                                 </div>
                             </div>
                             <div class="col-md-12">
@@ -348,6 +368,11 @@ while ($row = mysqli_fetch_assoc($result)) {
                                     <div class="invalid-feedback">
                                         <div>Seleccione una imagen</div>
                                     </div>
+                                    <?php if (strlen($ext_img_2) > 10) { ?>
+                                        <div class="delete-btn">
+                                            <button type="button" id="btn2">Borrar imagen</button>
+                                        </div>
+                                    <?php } ?>
                                 </div>
                             </div>
                             <div class="col-md-12">
@@ -358,6 +383,11 @@ while ($row = mysqli_fetch_assoc($result)) {
                                     <div class="invalid-feedback">
                                         <div>Seleccione una imagen</div>
                                     </div>
+                                    <?php if (strlen($ext_img_3) > 10) { ?>
+                                        <div class="delete-btn">
+                                            <button type="button" id="btn3">Borrar imagen</button>
+                                        </div>
+                                    <?php } ?>
                                 </div>
                             </div>
                         <?php } ?>
@@ -455,13 +485,42 @@ while ($row = mysqli_fetch_assoc($result)) {
     }
 
     document.getElementById("btn1").addEventListener("click", function() {
-        fetch('deleteImage.php')
-            .then(response => response.text()) // Get the text response
-            .then(data => {
-                console.log(data); // Log the response from PHP
-                alert(data); // Show the response in an alert
+        var jsVar = "<?php echo $ext_img_1; ?>";
+        let lastPart = jsVar.substring(jsVar.lastIndexOf('/') + 1);
+        alert("¿Deseas borrar la imagen " + lastPart);
+        fetch('deleteImage.php', {
+                method: 'POST', // Use POST method
+                headers: {
+                    'Content-Type': 'application/json', // Sending JSON data
+                },
+                body: JSON.stringify(jsVar) // Convert the data to a JSON string
             })
-            .catch(error => console.error('Error:', error)); // Handle errors
+    });
+
+    document.getElementById("btn2").addEventListener("click", function() {
+        var jsVar = "<?php echo $ext_img_2; ?>";
+        let lastPart = jsVar.substring(jsVar.lastIndexOf('/') + 1);
+        alert("¿Deseas borrar la imagen " + lastPart);
+        fetch('deleteImage.php', {
+                method: 'POST', // Use POST method
+                headers: {
+                    'Content-Type': 'application/json', // Sending JSON data
+                },
+                body: JSON.stringify(jsVar) // Convert the data to a JSON string
+            })
+    });
+
+    document.getElementById("btn3").addEventListener("click", function() {
+        var jsVar = "<?php echo $ext_img_3; ?>";
+        let lastPart = jsVar.substring(jsVar.lastIndexOf('/') + 1);
+        alert("¿Deseas borrar la imagen " + lastPart);
+        fetch('deleteImage.php', {
+                method: 'POST', // Use POST method
+                headers: {
+                    'Content-Type': 'application/json', // Sending JSON data
+                },
+                body: JSON.stringify(jsVar) // Convert the data to a JSON string
+            })
     });
 </script>
 </body>
