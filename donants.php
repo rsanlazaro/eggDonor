@@ -212,7 +212,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                             <?php if ($fenotipeAdded) { ?>
                                 <td>
                                     Fenotipo
-                                    <a href="editFenotipe.php?id=<?php echo $id[$i]; ?>">Editar</a>
+                                    <a href="editFenotipe.php?id=<?php echo $idFenotipeRmv; ?>">Editar</a>
                                     <form method="POST" class="form-table" action="deleteDonant.php">
                                         <input type="hidden" value="<?php echo $idFenotipeRmv; ?>" name="id">
                                         <input type="submit" onclick="return confirm('¿Deseas eliminar el registro de la donante?')" class="boton-rojo-block" value="Eliminar">
