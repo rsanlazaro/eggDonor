@@ -21,12 +21,14 @@ $deleteTgt = $twoElements[0] . "/" . $twoElementsExt[0];
 //         $path = pathinfo($file);
 //         $_FILES['image-1']['name'] = $id . "_1";
 // if (($_FILES['image-1']['size']) > 0) {
-$result = $cloudinary->uploadApi()->destroy($deleteTgt,$options = [
+$apiResponse = $cloudinary->uploadApi()->destroy($deleteTgt,$options = [
     "media_metadata" => true
 ]);
-var_dump($result);
-$response = $apiResponse->offsetGet('result');
-var_dump($response);
+// var_dump($apiResponse);
+$response1 = $apiResponse->offsetGet('result');
+$response2 = $apiResponse['result']; // "ok"
+var_dump($response1);
+var_dump($response2);
 // var_dump($result);
 //     $json  = json_encode($result);
 //     $array = json_decode($json, true);
