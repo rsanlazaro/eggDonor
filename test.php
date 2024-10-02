@@ -122,7 +122,7 @@ $conn = connectDB();
             })
             .then(response => response.text()) // Get the text response
             .then(data => {
-                console.log(data); // Log the response from PHP
+                // console.log(data); // Log the response from PHP
             })
             .catch(error => console.error('Error:', error)); // Handle errors
     });
