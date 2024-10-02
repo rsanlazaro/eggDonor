@@ -13,48 +13,49 @@ if (!$_SESSION['login']) {
 }
 $id = $_GET['id'];
 $conn = connectDB();
-$sql = "SELECT * FROM donants";
-$result = mysqli_query($conn, $sql);
-$index = 0;
-while ($row = mysqli_fetch_assoc($result)) {
-    $idAll[++$index] = $row['id'];
-}
-$idNew = max($idAll) + 1;
-$query = "SELECT * FROM donants WHERE id='${id}'";
-$result = mysqli_query($conn, $query);
-while ($row = mysqli_fetch_assoc($result)) {
-    $codeId = $row['code'];
-    $nationality = $row['nationality'];
-    $date_birth = $row['date_birth'];
-    $color_eyes = $row['color_eyes'];
-    $color_skin = $row['color_skin'];
-    $blood_type = $row['blood_type'];
-    $height = $row['height'];
-    $weight = $row['weight'];
-    $education = $row['education'];
-    $color_hair = $row['color_hair'];
-    $type_hair = $row['type_hair'];
-    $type_body = $row['type_body'];
-    $ocupation = $row['ocupation'];
-    $profile = "Fenotipe";
-    $supplier = $row['supplier'];
-    $price = $row['price'];
-    $code = $row['code'];
-    $code_img = $row['code_img'];
-    $ext_img_1 = "";
-    $ext_img_2 = "";
-    $ext_img_3 = "";
-    $ext_img_4 = "";
-    $hobbie = $row['hobbie'];
-    $agency = $row['agency'];
-    $color_favorite = $row['color_favorite'];
-    $animal_favorite = $row['animal_favorite'];
-    $book_movie_favorite = $row['book_movie_favorite'];
-    $goal = $row['goal'];
-    $ovarian_reserve = $row['ovarian_reserve'];
-}
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    $sql = "SELECT * FROM donants";
+    $result = mysqli_query($conn, $sql);
+    $index = 0;
+    while ($row = mysqli_fetch_assoc($result)) {
+        $idAll[++$index] = $row['id'];
+    }
+    $idNew = max($idAll) + 1;
+    $query = "SELECT * FROM donants WHERE id='${id}'";
+    $result = mysqli_query($conn, $query);
+    while ($row = mysqli_fetch_assoc($result)) {
+        $codeId = $row['code'];
+        $nationality = $row['nationality'];
+        $date_birth = $row['date_birth'];
+        $color_eyes = $row['color_eyes'];
+        $color_skin = $row['color_skin'];
+        $blood_type = $row['blood_type'];
+        $height = $row['height'];
+        $weight = $row['weight'];
+        $education = $row['education'];
+        $color_hair = $row['color_hair'];
+        $type_hair = $row['type_hair'];
+        $type_body = $row['type_body'];
+        $ocupation = $row['ocupation'];
+        $profile = "Fenotipe";
+        $supplier = $row['supplier'];
+        $price = $row['price'];
+        $code = $row['code'];
+        $code_img = $row['code_img'];
+        $ext_img_1 = "";
+        $ext_img_2 = "";
+        $ext_img_3 = "";
+        $ext_img_4 = "";
+        $hobbie = $row['hobbie'];
+        $agency = $row['agency'];
+        $color_favorite = $row['color_favorite'];
+        $animal_favorite = $row['animal_favorite'];
+        $book_movie_favorite = $row['book_movie_favorite'];
+        $goal = $row['goal'];
+        $ovarian_reserve = $row['ovarian_reserve'];
+    }
 
-$query    = "INSERT into `donants` 
+    $query    = "INSERT into `donants` 
     (id, 
     nationality, 
     date_birth, 
@@ -106,12 +107,12 @@ $query    = "INSERT into `donants`
     '$goal', 
     '$ovarian_reserve', 
     '$agency')";
-$result = mysqli_query($conn, $query);
+    $result = mysqli_query($conn, $query);
+}
 
 // When form submitted, insert values into the database.
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id = $_POST['id'];
-    $id--;
     if (isset($_FILES['image-1']['name'])) {
         $file = $_FILES['image-1']['name'];
         $path = pathinfo($file);
