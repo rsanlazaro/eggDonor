@@ -488,7 +488,7 @@ while ($row = mysqli_fetch_assoc($result)) {
         var jsVar = "<?php echo $ext_img_1; ?>";
         let lastPart = jsVar.substring(jsVar.lastIndexOf('/') + 1);
         alert("¿Deseas borrar la imagen " + lastPart + "?");
-        fetch('testDelete.php', {
+        fetch('deleteImage.php', {
                 method: 'POST', // Use POST method
                 headers: {
                     'Content-Type': 'application/json', // Sending JSON data
@@ -501,7 +501,7 @@ while ($row = mysqli_fetch_assoc($result)) {
         var jsVar = "<?php echo $ext_img_2; ?>";
         let lastPart = jsVar.substring(jsVar.lastIndexOf('/') + 1);
         alert("¿Deseas borrar la imagen " + lastPart + "?");
-        fetch('testDelete.php', {
+        fetch('deleteImage.php', {
                 method: 'POST', // Use POST method
                 headers: {
                     'Content-Type': 'application/json', // Sending JSON data
@@ -514,7 +514,7 @@ while ($row = mysqli_fetch_assoc($result)) {
         var jsVar = "<?php echo $ext_img_3; ?>";
         let lastPart = jsVar.substring(jsVar.lastIndexOf('/') + 1);
         alert("¿Deseas borrar la imagen " + lastPart + "?");
-        fetch('testDelete.php', {
+        fetch('deleteImage.php', {
                 method: 'POST', // Use POST method
                 headers: {
                     'Content-Type': 'application/json', // Sending JSON data
@@ -527,7 +527,7 @@ while ($row = mysqli_fetch_assoc($result)) {
         var jsVar = "<?php echo $ext_img_4; ?>";
         let lastPart = jsVar.substring(jsVar.lastIndexOf('/') + 1);
         alert("¿Deseas borrar la imagen " + lastPart + "?");
-        fetch('testDelete.php', {
+        fetch('deleteImage.php', {
                 method: 'POST', // Use POST method
                 headers: {
                     'Content-Type': 'application/json', // Sending JSON data
