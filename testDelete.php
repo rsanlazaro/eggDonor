@@ -13,13 +13,3 @@ $apiResponse = $cloudinary->uploadApi()->destroy($deleteTgt,$options = [
     "media_metadata" => true
 ]);
 $response = $apiResponse->offsetGet('result');
-// if (headers_sent()) {
-//     die("Headers have already been sent!");
-// }
-if ($response == "ok") {
-    header("Location: test.php?msg=La imagen ha sido borrada exitosamente.");
-    exit;
-} else {
-    header("Location: test.php?msg=Ocurrió un problema con la eliminación de la imagen. Por favor, intente de nuevo.");
-    exit;
-}

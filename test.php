@@ -113,6 +113,8 @@ $conn = connectDB();
 
     document.getElementById("btn1").addEventListener("click", function() {
         var jsVar = "<?php echo $ext_img_1; ?>";
+        let lastPart = jsVar.substring(jsVar.lastIndexOf('/') + 1);
+        alert("¿Deseas borrar la imagen " + lastPart);
         fetch('testDelete.php', {
                 method: 'POST', // Use POST method
                 headers: {
