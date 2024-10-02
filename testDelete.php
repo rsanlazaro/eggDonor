@@ -1,5 +1,5 @@
 <?php
-header("Location: www.youtube.com");
+// header("Location: www.youtube.com");
 session_start();
 include "includes/app.php";
 $conn = connectDB();
