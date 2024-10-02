@@ -67,7 +67,8 @@ while ($row = mysqli_fetch_assoc($result)) {
                 <div class="input-group">
                     <label for="searchBox">Búsqueda</label>
                     <input type="search" id="searchBox" placeholder="Filtrar..." value="<?php if (isset($donant_code_search)) {
-                        echo $donant_code_search; } ?>"/>
+                                                                                            echo $donant_code_search;
+                                                                                        } ?>" />
                 </div>
             </div>
         </div>
@@ -89,7 +90,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                     <th onclick="sortTable(12)">Familia</th>
                     <th onclick="sortTable(12)">Demográficos</th>
                     <?php if ($_SESSION['type'] === 'admin') { ?>
-                        <th colspan="2">Acciones</th>
+                        <th colspan="3">Acciones</th>
                     <?php } else { ?>
                         <th>Editar</th>
                     <?php } ?>
@@ -97,6 +98,19 @@ while ($row = mysqli_fetch_assoc($result)) {
             </thead>
             <tbody>
                 <?php for ($i = 1; $i <= $index; $i++) { ?>
+                    <?php
+                    $codeSearch = $code[$i];
+                    $query = "SELECT * from donants WHERE code='${codeSearch}'";
+                    $result = mysqli_query($conn, $query);
+                    if ($result->num_rows > 1) {
+                        $fenotipeAdded = true;
+                    } else {
+                        $fenotipeAdded = false;
+                    }
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $idFenotipeRmv = $row['id'];
+                    }
+                    ?>
                     <tr>
                         <td scope="row"><?php if (isset($code[$i])) {
                                             echo $code[$i];
@@ -192,6 +206,26 @@ while ($row = mysqli_fetch_assoc($result)) {
                                     <input type="hidden" value="<?php echo $id[$i]; ?>" name="id">
                                     <input type="submit" onclick="return confirm('¿Deseas eliminar el registro de la donante?')" class="boton-rojo-block" value="Eliminar">
                                 </form>
+                            </td>
+                        <?php } ?>
+                        <?php if ($profile[$i] !== "Fenotipe") { ?>
+                            <?php if ($fenotipeAdded) { ?>
+                                <td>
+                                    Fenotipo
+                                    <a href="editFenotipe.php?id=<?php echo $id[$i]; ?>">Editar</a>
+                                    <form method="POST" class="form-table" action="deleteDonant.php">
+                                        <input type="hidden" value="<?php echo $idFenotipeRmv; ?>" name="id">
+                                        <input type="submit" onclick="return confirm('¿Deseas eliminar el registro de la donante?')" class="boton-rojo-block" value="Eliminar">
+                                    </form>
+                                </td>
+                            <?php } else { ?>
+                                <td>
+                                    <a href="registrationFenotipe.php?id=<?php echo $id[$i]; ?>">Agregar fenotipo</a>
+                                </td>
+                            <?php } ?>
+                        <?php } else { ?>
+                            <td>
+                                <a></a>
                             </td>
                         <?php } ?>
                     </tr>
