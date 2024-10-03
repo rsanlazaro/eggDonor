@@ -294,7 +294,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                                     </div>
                                     <?php if (strlen($ext_img_1) > 10) { ?>
                                         <div class="delete-btn">
-                                            <button type="button" id="btn1">Borrar imagen</button>
+                                            <button type="button" id="btn1" onclick="deleteImg1()">Borrar imagen 1</button>
                                         </div>
                                     <?php } ?>
                                 </div>
@@ -309,7 +309,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                                     </div>
                                     <?php if (strlen($ext_img_2) > 10) { ?>
                                         <div class="delete-btn">
-                                            <button type="button" id="btn2">Borrar imagen</button>
+                                            <button type="button" id="btn2" onclick="deleteImg2()">Borrar imagen 2</button>
                                         </div>
                                     <?php } ?>
                                 </div>
@@ -324,7 +324,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                                     </div>
                                     <?php if (strlen($ext_img_3) > 10) { ?>
                                         <div class="delete-btn">
-                                            <button type="button" id="btn3">Borrar imagen</button>
+                                            <button type="button" id="btn3" onclick="deleteImg3()">Borrar imagen 3</button>
                                         </div>
                                     <?php } ?>
                                 </div>
@@ -339,7 +339,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                                     </div>
                                     <?php if (strlen($ext_img_4) > 10) { ?>
                                         <div class="delete-btn">
-                                            <button type="button" id="btn4">Borrar imagen</button>
+                                            <button type="button" id="btn4" onclick="deleteImg4()">Borrar imagen 4</button>
                                         </div>
                                     <?php } ?>
                                 </div>
@@ -355,7 +355,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                                     </div>
                                     <?php if (strlen($ext_img_1) > 10) { ?>
                                         <div class="delete-btn">
-                                            <button type="button" id="btn1">Borrar imagen</button>
+                                            <button type="button" id="btn1" onclick="deleteImg1()">Borrar imagen 1</button>
                                         </div>
                                     <?php } ?>
                                 </div>
@@ -370,7 +370,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                                     </div>
                                     <?php if (strlen($ext_img_2) > 10) { ?>
                                         <div class="delete-btn">
-                                            <button type="button" id="btn2">Borrar imagen</button>
+                                            <button type="button" id="btn2" onclick="deleteImg2()">Borrar imagen 2</button>
                                         </div>
                                     <?php } ?>
                                 </div>
@@ -385,7 +385,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                                     </div>
                                     <?php if (strlen($ext_img_3) > 10) { ?>
                                         <div class="delete-btn">
-                                            <button type="button" id="btn3">Borrar imagen</button>
+                                            <button type="button" id="btn3" onclick="deleteImg3()">Borrar imagen 3</button>
                                         </div>
                                     <?php } ?>
                                 </div>
@@ -484,57 +484,57 @@ while ($row = mysqli_fetch_assoc($result)) {
         }
     }
 
-    document.getElementById("btn1").addEventListener("click", function() {
+    function deleteImg1() {
         var jsVar = "<?php echo $ext_img_1; ?>";
         let lastPart = jsVar.substring(jsVar.lastIndexOf('/') + 1);
         confirm("¿Deseas borrar la imagen " + lastPart + "?");
         fetch('deleteImage.php', {
-                method: 'POST', // Use POST method
-                headers: {
-                    'Content-Type': 'application/json', // Sending JSON data
-                },
-                body: JSON.stringify(jsVar) // Convert the data to a JSON string
-            })
-    });
+            method: 'POST', // Use POST method
+            headers: {
+                'Content-Type': 'application/json', // Sending JSON data
+            },
+            body: JSON.stringify(jsVar) // Convert the data to a JSON string
+        })
+    }
 
-    document.getElementById("btn2").addEventListener("click", function() {
+    function deleteImg2() {
         var jsVar = "<?php echo $ext_img_2; ?>";
         let lastPart = jsVar.substring(jsVar.lastIndexOf('/') + 1);
         confirm("¿Deseas borrar la imagen " + lastPart + "?");
         fetch('deleteImage.php', {
-                method: 'POST', // Use POST method
-                headers: {
-                    'Content-Type': 'application/json', // Sending JSON data
-                },
-                body: JSON.stringify(jsVar) // Convert the data to a JSON string
-            })
-    });
+            method: 'POST', // Use POST method
+            headers: {
+                'Content-Type': 'application/json', // Sending JSON data
+            },
+            body: JSON.stringify(jsVar) // Convert the data to a JSON string
+        })
+    }
 
-    document.getElementById("btn3").addEventListener("click", function() {
+    function deleteImg3() {
         var jsVar = "<?php echo $ext_img_3; ?>";
         let lastPart = jsVar.substring(jsVar.lastIndexOf('/') + 1);
         confirm("¿Deseas borrar la imagen " + lastPart + "?");
         fetch('deleteImage.php', {
-                method: 'POST', // Use POST method
-                headers: {
-                    'Content-Type': 'application/json', // Sending JSON data
-                },
-                body: JSON.stringify(jsVar) // Convert the data to a JSON string
-            })
-    });
+            method: 'POST', // Use POST method
+            headers: {
+                'Content-Type': 'application/json', // Sending JSON data
+            },
+            body: JSON.stringify(jsVar) // Convert the data to a JSON string
+        })
+    }
 
-    document.getElementById("btn4").addEventListener("click", function() {
+    function deleteImg4() {
         var jsVar = "<?php echo $ext_img_4; ?>";
         let lastPart = jsVar.substring(jsVar.lastIndexOf('/') + 1);
         confirm("¿Deseas borrar la imagen " + lastPart + "?");
         fetch('deleteImage.php', {
-                method: 'POST', // Use POST method
-                headers: {
-                    'Content-Type': 'application/json', // Sending JSON data
-                },
-                body: JSON.stringify(jsVar) // Convert the data to a JSON string
-            })
-    });
+            method: 'POST', // Use POST method
+            headers: {
+                'Content-Type': 'application/json', // Sending JSON data
+            },
+            body: JSON.stringify(jsVar) // Convert the data to a JSON string
+        })
+    }
 </script>
 </body>
 
