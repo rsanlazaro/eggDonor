@@ -13,8 +13,6 @@ $index = substr($deleteTgt,-1);
 $cellElement = "ext_img_" . $index;
 $idElement = substr($deleteTgt,-6,4);
 $query = "UPDATE donants SET ${cellElement} = NULL WHERE id = ${idElement}";
-// var_dump($cellElement);
-// var_dump($idElement);
 $result = mysqli_query($conn, $query); 
 $apiResponse = $cloudinary->uploadApi()->destroy($deleteTgt,$options = [
     "media_metadata" => true
