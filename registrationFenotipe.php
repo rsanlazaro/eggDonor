@@ -39,7 +39,19 @@ while ($row = mysqli_fetch_assoc($result)) {
     $profile = "Fenotipe";
     $supplier = $row['supplier'];
     $price = $row['price'];
-    $code = $row['code'];
+    $oldCode = $row['code'];
+    $charToLook = "-";
+    if (strpos($oldCode, $charToLook) !== false) {
+        $parts = explode("-", $oldCode);
+        $before = $parts[0];
+        if ($before == "VIP" || "PLUS" || "ELITE") {
+            $before = "FN";
+        }
+        $after = $parts[1];
+        $code = $before . "-" . strrev($after);
+    } else {
+        $code = strrev($oldCode);
+    }
     $code_img = $row['code_img'];
     $ext_img_1 = "";
     $ext_img_2 = "";

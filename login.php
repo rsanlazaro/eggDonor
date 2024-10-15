@@ -17,7 +17,9 @@ include 'includes/templates/header.php';
   <div class="register-form">
     <div class="form-body">
       <div class="contact-form">
-        <h2 class="contact-form-title">Acceder</h2>
+        <div class="login-img-container">
+          <img class="login-img" src="build/img/icons/login.webp" alt="login">
+        </div>
         <?php if (isset($_GET['error'])) { ?>
 
           <p class="error"><?php echo $_GET['error']; ?></p>
@@ -53,7 +55,7 @@ include 'includes/templates/header.php';
             <input type="hidden" name="_subject" value="Solicitud de informes" /> -->
           <div class="form-btn">
             <button class="btn btn-send" type="submit">
-              <div>Acceder</div>
+              <div>Login</div>
             </button>
           </div>
         </form>
