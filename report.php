@@ -49,7 +49,7 @@ $html1 = '
 <body>
     <img src="build/img/icons/EggDonor.png" width="600" />
     <h1>Perfil Donante</h1>
-    <img src="src/img/report/initial.png" width="750" />
+    <img src="build/img/report/initial.png" width="750" />
     <p class="firstbold">Contenido exclusivo de Eggdonor</p>
     <p class="firstfootcover">www.eggdonor.mx</p>
 
@@ -57,7 +57,7 @@ $html1 = '
 
     <div class="dark-bg"></div>
     <h2 class="donant-name">Donante ' . $_POST['code'] . '</h2>
-    <img class="info" src="src/img/report/info.png" width="750" />
+    <img class="info" src="build/img/report/info.png" width="750" />
     <div class="spacer-table"></div>';
 
 if($_POST['first'] == "yes") {
@@ -66,7 +66,7 @@ $html1 = $html1 . '<table class="table1">
         <tr>
             <td class="td1">
                 <div class="td-icon">
-                    <img class="icon" src="src/img/report/nationality.png" width="750" />
+                    <img class="icon" src="build/img/report/nationality.png" width="750" />
                 </div>
                 <div class="td-info">
                     <h3 class="td-info1">Nacionalidad</h3>
@@ -75,7 +75,7 @@ $html1 = $html1 . '<table class="table1">
             </td>
             <td class="td1">
                 <div class="td-icon2">
-                    <img class="icon" src="src/img/report/birth.png" width="750" />
+                    <img class="icon" src="build/img/report/birth.png" width="750" />
                 </div>
                 <div class="td-info">
                     <h3 class="td-info1">Fecha de nacimiento</h3>
@@ -84,7 +84,7 @@ $html1 = $html1 . '<table class="table1">
             </td>
             <td class="td1">
                 <div class="td-icon3">
-                    <img class="icon" src="src/img/report/education.png" width="750" />
+                    <img class="icon" src="build/img/report/education.png" width="750" />
                 </div>
                 <div class="td-info">
                     <h3 class="td-info1">Educación</h3>
@@ -93,7 +93,7 @@ $html1 = $html1 . '<table class="table1">
             </td>
             <td class="td1">
                 <div class="td-icon4">
-                    <img class="icon" src="src/img/report/job.png" width="750" />
+                    <img class="icon" src="build/img/report/job.png" width="750" />
                 </div>
                 <div class="td-info">
                     <h3 class="td-info1">Ocupación</h3>
@@ -106,7 +106,7 @@ $html1 = $html1 . '<table class="table1">
         <tr>
             <td class="td1">
                 <div class="td-icon5">
-                    <img class="icon" src="src/img/report/eyes.png" width="750" />
+                    <img class="icon" src="build/img/report/eyes.png" width="750" />
                 </div>
                 <div class="td-info">
                     <h3 class="td-info1">Color de ojos</h3>
@@ -115,7 +115,7 @@ $html1 = $html1 . '<table class="table1">
             </td>
             <td class="td1">
                 <div class="td-icon6">
-                    <img class="icon" src="src/img/report/skin.png" width="750" />
+                    <img class="icon" src="build/img/report/skin.png" width="750" />
                 </div>
                 <div class="td-info">
                     <h3 class="td-info1">Color de piel</h3>
@@ -124,7 +124,7 @@ $html1 = $html1 . '<table class="table1">
             </td>
             <td class="td1">
                 <div class="td-icon7">
-                    <img class="icon" src="src/img/report/haircolor.png" width="750" />
+                    <img class="icon" src="build/img/report/haircolor.png" width="750" />
                 </div>
                 <div class="td-info">
                     <h3 class="td-info1">Color de pelo</h3>
@@ -133,7 +133,7 @@ $html1 = $html1 . '<table class="table1">
             </td>
             <td class="td1">
                 <div class="td-icon8">
-                    <img class="icon" src="src/img/report/hair.png" width="750" />
+                    <img class="icon" src="build/img/report/hair.png" width="750" />
                 </div>
                 <div class="td-info">
                     <h3 class="td-info1">Tipo de pelo</h3>
