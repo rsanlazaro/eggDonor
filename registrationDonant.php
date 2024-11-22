@@ -461,7 +461,6 @@ if (isset($_REQUEST['nationality'])) {
                                     <label class="label-form" for="type-select">Perfil</label>
                                     <div class="form-control">
                                         <select name="profile" class="selector" id="type-select" required>
-                                            <option value="Fenotipe">Fenotipo</option>
                                             <option value="Plus">Plus</option>
                                             <option value="VIP">VIP</option>
                                             <option value="Elite">Elite</option>
@@ -488,47 +487,6 @@ if (isset($_REQUEST['nationality'])) {
                             <?php
                             }
                             ?>
-                            <!-- <div class="col-md-12">
-                                <div class="has-validation">
-                                    <label class="label-form" for="validationCustomUsername">Imagen 1:</label>
-                                    <input type="file" onchange="previewFile()" class="form-control img-1-input" id="validationCustomUsername" aria-describedby="inputGroupPrepend" name="image-1" />
-                                    <img class="img-1-pre" src="" height="200" alt="Image preview...">
-                                    <div class="invalid-feedback">
-                                        <div>Seleccione una imagen</div>
-                                    </div>
-                                    <button id="upload_widget_1" class="cloudinary-button">Primera imagen</button>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="has-validation">
-                                    <label class="label-form" for="validationCustomUsername">Imagen 2:</label>
-                                    <input type="file" onchange="previewFile2()" class="form-control img-2-input" id="validationCustomUsername" aria-describedby="inputGroupPrepend" name="image-2" />
-                                    <img class="img-2-pre" src="" height="200" alt="Image preview...">
-                                    <div class="invalid-feedback">
-                                        <div>Seleccione una imagen</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="has-validation">
-                                    <label class="label-form" for="validationCustomUsername">Imagen 3:</label>
-                                    <input type="file" onchange="previewFile3()" class="form-control img-3-input" id="validationCustomUsername" aria-describedby="inputGroupPrepend" name="image-3" />
-                                    <img class="img-3-pre" src="" height="200" alt="Image preview...">
-                                    <div class="invalid-feedback">
-                                        <div>Seleccione una imagen</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="has-validation">
-                                    <label class="label-form" for="validationCustomUsername">Imagen 4:</label>
-                                    <input type="file" onchange="previewFile4()" class="form-control img-4-input" id="validationCustomUsername" aria-describedby="inputGroupPrepend" name="image-4" />
-                                    <img class="img-4-pre" src="" height="200" alt="Image preview...">
-                                    <div class="invalid-feedback">
-                                        <div>Seleccione una imagen</div>
-                                    </div>
-                                </div>
-                            </div> -->
                             <div class="form-btn">
                                 <button class="btn btn-send" type="submit">
                                     <div>Crear perfil de donante</div>
