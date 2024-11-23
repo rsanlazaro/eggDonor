@@ -13,8 +13,6 @@ require_once __DIR__ . '/vendor/autoload.php';
 // Create an instance of mPDF
 $mpdf = new \Mpdf\Mpdf();
 
-// var_dump($_POST);
-
 $id = $_POST['id'];
 $conn = connectDB();
 $index = 0;
