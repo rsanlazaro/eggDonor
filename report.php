@@ -37,6 +37,8 @@ $imageUrl4 = $_POST['ext_img_4'];
 
 $imageData1 = base64_encode(file_get_contents($imageUrl1));
 $imageData2 = base64_encode(file_get_contents($imageUrl2));
+$imageData3 = base64_encode(file_get_contents($imageUrl3));
+$imageData4 = base64_encode(file_get_contents($imageUrl4));
 
 $html1 = '
 <!DOCTYPE html>
