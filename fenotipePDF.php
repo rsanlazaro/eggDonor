@@ -826,7 +826,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                             <label class="label-form" for="validationCustomUsername">Imagen 1:</label>
                             <br>
                             <br>
-                            <img class="img-1-pre" src=<?php echo $ext_img_1 ?> height="200" alt="Image preview...">
+                            <img class="img-1-pre" src=<?php echo $ext_img_1 ?> alt="Image preview...">
                         </div>
                     </div>
                 <?php } ?>
@@ -837,7 +837,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                             <label class="label-form" for="validationCustomUsername">Imagen 2:</label>
                             <br>
                             <br>
-                            <img class="img-2-pre" src=<?php echo $ext_img_2 ?> height="200" alt="Image preview...">
+                            <img class="img-2-pre" src=<?php echo $ext_img_2 ?> alt="Image preview...">
                         </div>
                     </div>
                 <?php } ?>
@@ -848,7 +848,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                             <label class="label-form" for="validationCustomUsername">Imagen 3:</label>
                             <br>
                             <br>
-                            <img class="img-3-pre" src=<?php echo $ext_img_3 ?> height="200" alt="Image preview...">
+                            <img class="img-2-pre" src=<?php echo $ext_img_3 ?> alt="Image preview...">
                         </div>
                     </div>
                 <?php } ?>
@@ -859,7 +859,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                             <label class="label-form" for="validationCustomUsername">Imagen 4:</label>
                             <br>
                             <br>
-                            <img class="img-3-pre" src=<?php echo $ext_img_4 ?> height="200" alt="Image preview...">
+                            <img class="img-3-pre" src=<?php echo $ext_img_4 ?> alt="Image preview...">
                         </div>
                     </div>
                 <?php } ?>

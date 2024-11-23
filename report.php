@@ -595,7 +595,7 @@ $html1 = $html1 . '<div class="dark-bg"></div>
     }
 
     if (isset($imageData3)) {
-        $html4 = $html4 . '<img class="img3" src="data:image/png;base64,' . $imageData3 . '" height="150"/>
+        $html4 = $html4 . '<img class="img2" src="data:image/png;base64,' . $imageData3 . '" height="150"/>
     <br>';
     }
 
