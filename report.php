@@ -591,22 +591,22 @@ $html1 = $html1 . '<div class="dark-bg"></div>
 <h2 class="donant-name">Donante FN-MJAN</h2>
 <div></div>';
 
-    if (isset($imageData1)) {
+    if (isset($imageData1) || strlen($imageData1) > 5) {
         $html2 = $html2 . '<img class="img1" src="data:image/png;base64,' . $imageData1 . '" height="150"/>
         <br>';
     }
 
-    if (isset($imageData2)) {
+    if (isset($imageData2) || strlen($imageData2) > 5) {
         $html3 = $html3 . '<img class="img2" src="data:image/png;base64,' . $imageData2 . '" height="150"/>
     <br>';
     }
 
-    if (isset($imageData3)) {
+    if (isset($imageData3) || strlen($imageData3) > 5) {
         $html4 = $html4 . '<img class="img2" src="data:image/png;base64,' . $imageData3 . '" height="150"/>
     <br>';
     }
 
-    if (isset($imageData4)) {
+    if (isset($imageData4) || strlen($imageData4) > 5) {
         $html5 = $html5 . '<img class="img3" src="data:image/png;base64,' . $imageData4 . '" height="150"/>';
     }
 
@@ -874,4 +874,4 @@ foreach ($htmlChunks as $chunk) {
 // $mpdf->Image($imageUrl, 10, 50, 100, 100); // (URL, x, y, width, height)
 
 // Output PDF
-// $mpdf->Output('sample.pdf', 'I'); // D = force download, I = inline display, F = save to file
+$mpdf->Output('sample.pdf', 'I'); // D = force download, I = inline display, F = save to file

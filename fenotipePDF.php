@@ -819,7 +819,7 @@ while ($row = mysqli_fetch_assoc($result)) {
         </div>
         <?php if (isset($ext_img_1) || isset($ext_img_2) || isset($ext_img_3) || isset($ext_img_4)) { ?>
             <div class="form-top">
-                <?php if (isset($ext_img_1) || $ext_img_1 != "-") { ?>
+                <?php if (isset($ext_img_1) || strlen($ext_img_1) > 5) { ?>
                     <div class="col-md-3">
                         <div class="has-validation">
                             <br>
@@ -830,7 +830,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                         </div>
                     </div>
                 <?php } ?>
-                <?php if (isset($ext_img_2) || $ext_img_2 != "-") { ?>
+                <?php if (isset($ext_img_2) || strlen($ext_img_2) > 5) { ?>
                     <div class="col-md-3">
                         <div class="has-validation">
                             <br>
@@ -841,7 +841,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                         </div>
                     </div>
                 <?php } ?>
-                <?php if (isset($ext_img_3) || $ext_img_3 != "-") { ?>
+                <?php if (isset($ext_img_3) || strlen($ext_img_3) > 5) { ?>
                     <div class="col-md-3">
                         <div class="has-validation">
                             <br>
@@ -852,7 +852,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                         </div>
                     </div>
                 <?php } ?>
-                <?php if (isset($ext_img_4) || $ext_img_4 != "-") { ?>
+                <?php if (isset($ext_img_4) || strlen($ext_img_4) > 5) { ?>
                     <div class="col-md-3">
                         <div class="has-validation">
                             <br>
