@@ -38,11 +38,6 @@ $imageData2 = base64_encode(file_get_contents($imageUrl2));
 $imageData3 = base64_encode(file_get_contents($imageUrl3));
 $imageData4 = base64_encode(file_get_contents($imageUrl4));
 
-var_dump($imageData1);
-var_dump($imageData2);
-var_dump($imageData3);
-var_dump($imageData4);
-
 $html1 = '
 <!DOCTYPE html>
 <html lang="en">
