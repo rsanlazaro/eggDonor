@@ -818,47 +818,47 @@ while ($row = mysqli_fetch_assoc($result)) {
         </div>
         <?php if (isset($ext_img_1) || isset($ext_img_2) || isset($ext_img_3) || isset($ext_img_4)) { ?>
             <div class="form-top">
-                <?php if (isset($ext_img_1) || strlen($ext_img_1) > 5) { ?>
+                <?php if (isset($ext_img_1) && strlen($ext_img_1) > 5) { ?>
                     <div class="col-md-3">
                         <div class="has-validation">
                             <br>
                             <label class="label-form" for="validationCustomUsername">Imagen 1:</label>
                             <br>
                             <br>
-                            <img class="img-1-pre" src=<?php echo $ext_img_1 ?> alt="Image preview...">
+                            <img class="img-1-pre img-pre-report" src=<?php echo $ext_img_1 ?> alt="Image preview...">
                         </div>
                     </div>
                 <?php } ?>
-                <?php if (isset($ext_img_2) || strlen($ext_img_2) > 5) { ?>
+                <?php if (isset($ext_img_2) && strlen($ext_img_2) > 5) { ?>
                     <div class="col-md-3">
                         <div class="has-validation">
                             <br>
                             <label class="label-form" for="validationCustomUsername">Imagen 2:</label>
                             <br>
                             <br>
-                            <img class="img-2-pre" src=<?php echo $ext_img_2 ?> alt="Image preview...">
+                            <img class="img-2-pre img-pre-report" src=<?php echo $ext_img_2 ?> alt="Image preview...">
                         </div>
                     </div>
                 <?php } ?>
-                <?php if (isset($ext_img_3) || strlen($ext_img_3) > 5) { ?>
+                <?php if (isset($ext_img_3) && strlen($ext_img_3) > 5) { ?>
                     <div class="col-md-3">
                         <div class="has-validation">
                             <br>
                             <label class="label-form" for="validationCustomUsername">Imagen 3:</label>
                             <br>
                             <br>
-                            <img class="img-2-pre" src=<?php echo $ext_img_3 ?> alt="Image preview...">
+                            <img class="img-2-pre img-pre-report" src=<?php echo $ext_img_3 ?> alt="Image preview...">
                         </div>
                     </div>
                 <?php } ?>
-                <?php if (isset($ext_img_4) || strlen($ext_img_4) > 5) { ?>
+                <?php if (isset($ext_img_4) && strlen($ext_img_4) > 5) { ?>
                     <div class="col-md-3">
                         <div class="has-validation">
                             <br>
                             <label class="label-form" for="validationCustomUsername">Imagen 4:</label>
                             <br>
                             <br>
-                            <img class="img-3-pre" src=<?php echo $ext_img_4 ?> alt="Image preview...">
+                            <img class="img-3-pre img-pre-report" src=<?php echo $ext_img_4 ?> alt="Image preview...">
                         </div>
                     </div>
                 <?php } ?>

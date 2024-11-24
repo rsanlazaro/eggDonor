@@ -157,11 +157,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <div class="invalid-feedback">
                                     <div>Seleccione una imagen</div>
                                 </div>
-                                <?php if (strlen($ext_img_1) > 10) { ?>
+                                <?php if ($ext_img_1 !== null){ if (strlen($ext_img_1) > 10) { ?>
                                     <div class="delete-btn">
                                         <button type="button" id="btn1" onclick="deleteImg1()">Borrar imagen 1</button>
                                     </div>
-                                <?php } ?>
+                                <?php } } ?>
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -172,11 +172,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <div class="invalid-feedback">
                                     <div>Seleccione una imagen</div>
                                 </div>
-                                <?php if (strlen($ext_img_2) > 10) { ?>
+                                <?php if ($ext_img_2 !== null){ if (strlen($ext_img_2) > 10) { ?>
                                     <div class="delete-btn">
                                         <button type="button" id="btn2" onclick="deleteImg2()">Borrar imagen 2</button>
                                     </div>
-                                <?php } ?>
+                                <?php } } ?>
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -187,11 +187,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <div class="invalid-feedback">
                                     <div>Seleccione una imagen</div>
                                 </div>
-                                <?php if (strlen($ext_img_3) > 10) { ?>
+                                <?php if ($ext_img_3 !== null){ if (strlen($ext_img_3) > 10) { ?>
                                     <div class="delete-btn">
                                         <button type="button" id="btn3" onclick="deleteImg3()">Borrar imagen 3</button>
                                     </div>
-                                <?php } ?>
+                                <?php } } ?>
                             </div>
                         </div>
                         <div class="form-btn">

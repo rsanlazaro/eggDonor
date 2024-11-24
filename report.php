@@ -33,10 +33,10 @@ $imageUrl2 = $_POST['ext_img_2'];
 $imageUrl3 = $_POST['ext_img_3'];
 $imageUrl4 = $_POST['ext_img_4'];
 
-$imageData1 = base64_encode(file_get_contents($imageUrl1));
-$imageData2 = base64_encode(file_get_contents($imageUrl2));
-$imageData3 = base64_encode(file_get_contents($imageUrl3));
-$imageData4 = base64_encode(file_get_contents($imageUrl4));
+if (isset($imageUrl1) && strlen($imageUrl1)>5) {$imageData1 = base64_encode(file_get_contents($imageUrl1));}
+if (isset($imageUrl2) && strlen($imageUrl2)>5) {$imageData2 = base64_encode(file_get_contents($imageUrl2));}
+if (isset($imageUrl3) && strlen($imageUrl3)>5) {$imageData3 = base64_encode(file_get_contents($imageUrl3));}
+if (isset($imageUrl4) && strlen($imageUrl4)>5) {$imageData4 = base64_encode(file_get_contents($imageUrl4));}
 
 $html1 = '
 <!DOCTYPE html>
@@ -584,22 +584,22 @@ $html1 = $html1 . '<div class="dark-bg"></div>
 <h2 class="donant-name">Donante FN-MJAN</h2>
 <div></div>';
 
-    if (isset($imageData1) || strlen($imageData1) > 5) {
+    if (isset($imageUrl1) && strlen($imageUrl1)>5) {
         $html2 = $html2 . '<img class="img1" src="data:image/png;base64,' . $imageData1 . '" height="150"/>
         <br>';
     }
 
-    if (isset($imageData2) || strlen($imageData2) > 5) {
+    if (isset($imageUrl2) && strlen($imageUrl2)>5) {
         $html3 = $html3 . '<img class="img2" src="data:image/png;base64,' . $imageData2 . '" height="150"/>
     <br>';
     }
 
-    if (isset($imageData3) || strlen($imageData3) > 5) {
+    if (isset($imageUrl3) && strlen($imageUrl3)>5) {
         $html4 = $html4 . '<img class="img2" src="data:image/png;base64,' . $imageData3 . '" height="150"/>
     <br>';
     }
 
-    if (isset($imageData4) || strlen($imageData4) > 5) {
+    if (isset($imageUrl4) && strlen($imageUrl4)>5) {
         $html5 = $html5 . '<img class="img3" src="data:image/png;base64,' . $imageData4 . '" height="150"/>';
     }
 

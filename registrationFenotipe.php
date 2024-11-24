@@ -91,7 +91,8 @@ $query    = "INSERT into `donants`
     book_movie_favorite, 
     goal, 
     ovarian_reserve, 
-    agency)
+    agency,
+    origin_code)
     VALUES 
     ('$idNew', 
     '$nationality', 
@@ -117,7 +118,8 @@ $query    = "INSERT into `donants`
     '$book_movie_favorite', 
     '$goal', 
     '$ovarian_reserve', 
-    '$agency')";
+    '$agency',
+    '$id')";
 $result = mysqli_query($conn, $query);
 if ($result) {
     header("Location: donants.php?msg=El usuario se ha creado exitosamente");

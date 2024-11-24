@@ -11,27 +11,27 @@ if (!$_SESSION['login']) {
 
 <main class="register">
     <div class="register-info">
-        <h3>Consola de administrador</h3>
+        <h3>Registro de donantes</h3>
     </div>
     <div class="esthetics-options">
         <div class="esthetics-options-grid">
-            <a href="users.php" class="esthetics-packages">
+            <a href="donantsAgency.php" class="esthetics-packages">
                 <div class="esthetics-options-img">
                     <img src="build/img/admin/users.webp" alt="users" />
                 </div>
                 <div class="esthetics-options-bg">
                     <div class="esthetics-title">
-                        <h2>Perfiles<br /> <span></span></h2>
+                        <h2>Por agencia<br /> <span></span></h2>
                     </div>
                 </div>
             </a>
-            <a href="mainDonants.php" class="esthetics-options-treatments">
+            <a href="donants.php" class="esthetics-options-treatments">
                 <div class="esthetics-options-img">
                     <img src="build/img/admin/users.webp" alt="donants" />
                 </div>
                 <div class="esthetics-options-bg">
                     <div class="esthetics-title">
-                        <h2>Donantes<br /> <span></span></h2>
+                        <h2>Todas<br /> <span></span></h2>
                     </div>
                 </div>
             </a>

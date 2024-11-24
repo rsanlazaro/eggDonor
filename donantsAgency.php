@@ -35,6 +35,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     $profile[$index] = $row['profile'];
     $supplier[$index] = $row['supplier'];
     $price[$index] = $row['price'];
+    $agency[$index] = $row['agency'];
     $code[$index] = $row['code'];
 }
 
@@ -83,9 +84,9 @@ while ($row = mysqli_fetch_assoc($result)) {
                     <th onclick="sortTable(5)">Altura (m)</th>
                     <th onclick="sortTable(6)">Peso (kg)</th>
                     <th onclick="sortTable(7)">Color de cabello</th>
-                    <th onclick="sortTable(8)">Tipo de cabello</th>
-                    <th onclick="sortTable(9)">Perfil</th>
-                    <th onclick="sortTable(10)">Proveedor</th>
+                    <th onclick="sortTable(8)">Perfil</th>
+                    <th onclick="sortTable(9)">Proveedor</th>
+                    <th onclick="sortTable(10)">Agencia</th>
                     <th onclick="sortTable(11)">Precio</th>
                     <th onclick="sortTable(12)">Familia</th>
                     <th onclick="sortTable(12)">Demográficos</th>
@@ -113,14 +114,15 @@ while ($row = mysqli_fetch_assoc($result)) {
                     ?>
                     <tr>
                         <td scope="row"><?php if (isset($code[$i])) {
-                                            if ($profile[$i] === "Fenotipe") {?>
-                                                <a href="fenotipePDF.php?id=<?php echo $id[$i]; ?>"><?php echo $code[$i]; ?></a>
-                                            <?php } else {
+                                            if ($profile[$i] === "Fenotipe") { ?>
+                                    <a href="fenotipePDF.php?id=<?php echo $id[$i]; ?>"><?php echo $code[$i]; ?></a>
+                            <?php } else {
                                                 echo $code[$i];
                                             }
                                         } else {
                                             echo "-";
-                                        } ?></td>
+                                        } ?>
+                        </td>
                         <td data-title="Origen/Etnia"><?php if (isset($nationality[$i])) {
                                                             echo $nationality[$i];
                                                         } else {
@@ -152,11 +154,6 @@ while ($row = mysqli_fetch_assoc($result)) {
                                                     echo "-";
                                                 } ?> </td>
                         <td data-title="Color de cabello"><?php echo $color_hair[$i] ?></td>
-                        <td data-title="Tipo de cabello"><?php if (isset($type_hair[$i])) {
-                                                                echo $type_hair[$i];
-                                                            } else {
-                                                                echo "-";
-                                                            } ?></td>
                         <td data-title="Perfil"><?php if (isset($profile[$i])) {
                                                     if ($profile[$i] === "Fenotipe") {
                                                         echo "Fenotipo";
@@ -168,6 +165,11 @@ while ($row = mysqli_fetch_assoc($result)) {
                                                 } ?></td>
                         <td data-title="Proveedor"><?php if (isset($supplier[$i])) {
                                                         echo $supplier[$i];
+                                                    } else {
+                                                        echo "-";
+                                                    } ?></td>
+                        <td data-title="Agencia"><?php if (isset($agency[$i])) {
+                                                        echo $agency[$i];
                                                     } else {
                                                         echo "-";
                                                     } ?></td>
