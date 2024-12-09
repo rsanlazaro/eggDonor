@@ -262,7 +262,7 @@ if ($_POST['third'] == "yes") {
 
 $html1 = $html1 . '
 
-    <h2 class="donant-name2">Donante FN-MJAN</h2>
+    <h2 class="donant-name2">Donante ' . $_POST['code'] . '</h2>
     <h4> Antecedentes Médicos y Familiares</h4>
 
     <table class="table3">
