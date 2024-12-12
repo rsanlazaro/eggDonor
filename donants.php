@@ -115,9 +115,9 @@ while ($row = mysqli_fetch_assoc($result)) {
                         <td scope="row"><?php if (isset($code[$i])) {
                                             if ($profile[$i] === "Fenotipe") {?>
                                                 <a href="fenotipePDF.php?id=<?php echo $id[$i]; ?>"><?php echo $code[$i]; ?></a>
-                                            <?php } else {
-                                                echo $code[$i];
-                                            }
+                                            <?php } else { ?>
+                                                <a href="profilePDF.php?id=<?php echo $id[$i]; ?>"><?php echo $code[$i]; ?></a>
+                                            <?php }
                                         } else {
                                             echo "-";
                                         } ?></td>
